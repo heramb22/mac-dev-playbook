@@ -53,7 +53,7 @@ homebrew_cask_apps:
   - firefox
   - google-chrome
   - istat-menus
-  - caskroom/homebrew-versions/java
+  - java
   - limechat
   - phpstorm
   - slack
