@@ -60,7 +60,11 @@ update_needed () {
     return 0
 }
 
+## Add write permission for /usr/local for admin group
+sudo chown -R $(whoami):admin /usr/local
+
 ## Install or Update Homebrew ##
+## ToDo: Automate Homebrew install so that 'Return' key isn't needed to create directories.
 echo 'Installing or Updating Homebrew...'
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -93,11 +97,11 @@ echo -e "\n\n"
 ## Check out a copy of this repo (first time only) ##
 echo 'Checking out MADE (Mac Automated Development Environment) repo...'
 git clone https://github.com/heramb22/made.git /usr/local/made 2>/dev/null
-cd /usr/local/made/
 
 ## Run Ansible Playbook ##
 echo 'Handing Playbook to Ansible (will require your sudo password)...'
 echo -e "\n\n"
 #/usr/local/dev-env/bin/dev update
+cd /usr/local/made/
 ansible-galaxy install -r requirements.yml
 ansible-playbook main.yml -i inventory --ask-sudo-pass --verbose
