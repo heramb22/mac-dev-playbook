@@ -1,89 +1,105 @@
 ---
-downloads: ~/.ansible-downloads/
-
 configure_sudoers: yes
-
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
-dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
-dotfiles_files:
-  - .bash_profile
-  - .gitconfig
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
-
+dev_env_dir: /usr/local/dev-env
+homebrew_install_path: /usr/local/homebrew
 homebrew_installed_packages:
   - ansible
   - autoconf
   - bash-completion
+  - brew-cask
+  - composer
   - docker
-  - docker-compose
-  - docker-machine
-  - gettext
+  - drush
   - git
   - go
   - gpg
   - hub
-  - httpie
-  - iperf
-  - libdvdcss
-  - libevent
-  - packer
-  - python
-  - sqlite
+  - ios-sim
   - mcrypt
-  - mysql
   - npm
   - nvm
+  - openssl
+  - packer
+  - phpmd
+  - php-code-sniffer
+  - php-cs-fixer
+  - phpunit
   - php56
   - php56-mcrypt
   - php56-xdebug
-  - ssh-copy-id
-  - cowsay
-  - ios-sim
-  - readline
-  - subversion
-  - kdiff3
+  - python
   - openssl
-  - pv
-  - drush
+  - readline
+  - ssh-copy-id
   - wget
-  - wrk
-  - brew-cask
+  - zsh
 
 homebrew_taps:
   - caskroom/cask
+  - caskroom/versions
+  - homebrew/php
   - homebrew/binary
   - homebrew/dupes
-  - homebrew/php
-  - homebrew/versions
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - adium
-  - bettertouchtool
-  - google-chrome
+  - android-file-transfer
+  - atom
   - dropbox
-  - fing
+  - dockertoolbox
   - firefox
-  - handbrake
-  - karabiner
+  - google-chrome
+  - istat-menus
+  - caskroom/homebrew-versions/java
   - limechat
-  - licecap
-  - macvim
-  - menumeters
-  - nvalt
+  - phpstorm
+  - slack
   - sequel-pro
-  - skype
-  - skitch
-  - seil
-  - sublime-text # Note - Sublime Text 2 only, at this time...
+  - sourcetree
   - textmate
   - timemachineeditor
-  - tower
   - transmit
   - vagrant
   - vagrant-manager
-  - vlc
   - virtualbox
+  - vlc
+
+dockitems_to_remove:
+  - Launchpad
+  - Mail
+  - Safari
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - iTunes
+  - iBooks
+  - App Store
+  - System Preferences
+  - Calendar
+
+dockitems_to_persist:
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app"
+    pos: 1
+  - name: Firefox
+    path: "/Applications/Firefox.app"
+    pos: 2
+  - name: PhpStorm
+    path: /Applications/PhpStorm.app
+    pos: 3
+  - name: Slack
+    path: /Applications/Slack.app
+    pos: 4
+  - name: VirtualBox
+    path: /Applications/VirtualBox.app
+    pos: 5
+  - name: Terminal
+    path: /Applications/Utilities/Terminal.app
+    pos: 6
+  - name: SourceTree
+    path: /Applications/SourceTree.app
+    pos: 7
