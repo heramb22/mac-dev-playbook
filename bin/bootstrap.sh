@@ -14,10 +14,9 @@
 # install Xcode Command Line Tools
 # https://github.com/timsutton/osx-vm-templates/blob/ce8df8a7468faa7c5312444ece1b977c1b2f77a4/scripts/xcode-cli-tools.sh
 echo 'Checking for Xcode Command Line Tools...'
-if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
-   test -d "${xpath}" && test -x "${xpath}" ; then
-    echo 'already installed.'
-else
+#if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}" ; then
+xcode-select -p &> /dev/null
+if [ $? -ne 0 ]; then
     echo 'installing.'
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
     PROD=$(softwareupdate -l |
@@ -26,6 +25,8 @@ else
       sed -e 's/^ *//' |
       tr -d '\n')
     softwareupdate -i "$PROD" -v;
+else
+    echo 'already installed.'
 fi
 
 
