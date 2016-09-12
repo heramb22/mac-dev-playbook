@@ -49,7 +49,7 @@ homebrew_cask_apps:
   - android-file-transfer
   - atom
   - dropbox
-  - dockertoolbox
+  - docker-toolbox
   - firefox
   - google-chrome
   - istat-menus
