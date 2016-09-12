@@ -9,13 +9,16 @@ homebrew_installed_packages:
   - brew-cask
   - composer
   - docker
+  - dockutil
   - drush
   - git
   - go
   - gpg
+  #- httpd24
   - hub
   - ios-sim
   - mcrypt
+  #- mysql
   - npm
   - nvm
   - openssl
@@ -40,6 +43,7 @@ homebrew_taps:
   - homebrew/php
   - homebrew/binary
   - homebrew/dupes
+  - homebrew/apache
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
