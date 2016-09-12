@@ -16,6 +16,8 @@
 echo 'Checking for Xcode Command Line Tools...'
 if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
    test -d "${xpath}" && test -x "${xpath}" ; then
+    echo 'already installed.'
+else
     echo 'installing.'
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
     PROD=$(softwareupdate -l |
@@ -24,8 +26,6 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
       sed -e 's/^ *//' |
       tr -d '\n')
     softwareupdate -i "$PROD" -v;
-else
-    echo 'already installed.'
 fi
 
 
