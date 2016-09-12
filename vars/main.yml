@@ -6,7 +6,6 @@ homebrew_installed_packages:
   - ansible
   - autoconf
   - bash-completion
-  - brew-cask
   - composer
   - docker
   - dockutil
@@ -27,9 +26,9 @@ homebrew_installed_packages:
   - php-code-sniffer
   - php-cs-fixer
   - phpunit
-  - php56
-  - php56-mcrypt
-  - php56-xdebug
+  #- php56
+  #- php56-mcrypt
+  #- php56-xdebug
   - python
   - openssl
   - readline
