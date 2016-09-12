@@ -91,10 +91,13 @@ fi
 echo -e "\n\n"
 
 ## Check out a copy of this repo (first time only) ##
-echo 'Checking out Dash repo...'
-git clone https://github.com/heramb22/dash.git /usr/local/dev-env 2>/dev/null
+echo 'Checking out MADE (Mac Automated Development Environment) repo...'
+git clone https://github.com/heramb22/made.git /usr/local/made 2>/dev/null
+cd /usr/local/made/
 
 ## Run Ansible Playbook ##
 echo 'Handing Playbook to Ansible (will require your sudo password)...'
 echo -e "\n\n"
-/usr/local/dev-env/bin/dev update
+#/usr/local/dev-env/bin/dev update
+ansible-galaxy install -r requirements.yml
+ansible-playbook main.yml -i inventory --ask-sudo-pass --verbose
