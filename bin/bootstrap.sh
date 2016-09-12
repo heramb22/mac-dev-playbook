@@ -68,7 +68,7 @@ update_needed () {
 }
 
 ## Add write permission for /usr/local for admin group
-sudo chown -R $(whoami):admin /usr/local
+#sudo chown -R $(whoami):admin /usr/local
 
 ## Install or Update Homebrew ##
 ## ToDo: Automate Homebrew install so that 'Return' key isn't needed to create directories.
@@ -111,4 +111,4 @@ echo -e "\n\n"
 #/usr/local/dev-env/bin/dev update
 cd /usr/local/made/
 ansible-galaxy install -r requirements.yml
-ansible-playbook main.yml -i inventory --ask-sudo-pass --verbose
+ansible-playbook -i inventory --ask-sudo-pass --verbose main.yml
