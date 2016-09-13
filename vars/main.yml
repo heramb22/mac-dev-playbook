@@ -1,12 +1,13 @@
 ---
 configure_sudoers: yes
-dev_env_dir: /usr/local/dev-env
+dev_env_dir: /usr/local/made
 homebrew_install_path: /usr/local/homebrew
 homebrew_installed_packages:
   - ansible
   - autoconf
   - bash-completion
   - composer
+  - coreutils
   - docker
   - dockutil
   - drush
@@ -32,6 +33,7 @@ homebrew_installed_packages:
   - python
   - openssl
   - readline
+  - sl
   - ssh-copy-id
   - wget
   - zsh
