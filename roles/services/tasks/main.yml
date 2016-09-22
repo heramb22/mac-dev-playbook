@@ -17,16 +17,7 @@
   homebrew:
     name: httpd24
     state: latest
-    install_options: "with-brewed-openssl,with-mpm-event"
-
-- name: Install Apache mod_fastcgi module
-  homebrew:
-    name: mod_fastcgi
-    state: present
-    install_options: "with-brewed-httpd24"
-
-- name: Create vhosts config directory
-
+    install_options: "with-brewed-openssl"
 
 - name: Start services now and at login
   shell: brew services start {{ item }}
