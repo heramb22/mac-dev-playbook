@@ -6,6 +6,7 @@ homebrew_installed_packages:
   - android-platform-tools
   - android-sdk
   - ansible
+  - ant
   - autoconf
   - bash-completion
   - composer
@@ -22,6 +23,7 @@ homebrew_installed_packages:
   - ios-sim
   - mcrypt
   #- mysql
+  - node
   - npm
   - nvm
   - openssl
