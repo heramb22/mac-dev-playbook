@@ -1,6 +1,5 @@
 ---
 configure_sudoers: yes
-dev_env_dir: /usr/local/dev-env
 homebrew_install_path: /usr/local/homebrew
 homebrew_installed_packages:
   - ansible
@@ -43,6 +42,7 @@ homebrew_taps:
   - homebrew/binary
   - homebrew/dupes
   - homebrew/apache
+  - homebrew/services
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -67,7 +67,7 @@ homebrew_cask_apps:
   - virtualbox
   - vlc
 
-dockitems_to_remove:
+dockutil_items_to_remove:
   - Launchpad
   - Mail
   - Safari
@@ -84,7 +84,7 @@ dockitems_to_remove:
   - System Preferences
   - Calendar
 
-dockitems_to_persist:
+dockutil_items_to_persist:
   - name: Google Chrome
     path: "/Applications/Google Chrome.app"
     pos: 1
@@ -106,3 +106,5 @@ dockitems_to_persist:
   - name: SourceTree
     path: /Applications/SourceTree.app
     pos: 7
+
+services_items:
