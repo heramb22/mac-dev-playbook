@@ -1,12 +1,38 @@
 ---
-- name: Start services at login
-  file: src=/usr/local/opt/{{ item }}/homebrew.mxcl.{{ item }}.plist path=~/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist state=link force=yes
+- name: Tap Homebrew Services
+  homebrew_tap:
+    tap: homebrew/services
+
+- name: Install MySQL
+  homebrew:
+    name: mysql
+    state: latest
+
+- name: Stop Mac-default Apache
+  shell: launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
+  become: yes
+  become_method: sudo
+
+- name: Install Apache (httpd24)
+  homebrew:
+    name: httpd24
+    state: latest
+    install_options: "with-brewed-openssl"
+
+- name: Start services now and at login
+  shell: brew services start {{ item }}
   with_items:
     - mysql
     - httpd24
 
-- name: Setup launch agents for services
-  command: launchctl load {{ home }}/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist
-  with_items:
-    - mysql
-    - httpd24
+#- name: Start services at login
+#  file: src=/usr/local/opt/{{ item }}/homebrew.mxcl.{{ item }}.plist path=~/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist state=link force=yes
+#  with_items:
+#    - mysql
+#    - httpd24
+
+#- name: Setup launch agents for services
+#  command: launchctl load {{ home }}/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist
+#  with_items:
+#    - mysql
+#    - httpd24
